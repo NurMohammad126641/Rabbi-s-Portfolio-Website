@@ -24,11 +24,12 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(26, 26, 26, 0.95);
-    backdrop-filter: blur(10px);
+    background-color: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
     z-index: 1000;
     padding: 1rem 0;
     transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(97, 218, 251, 0.1);
 }
 
 .nav-container {
@@ -43,12 +44,10 @@ body {
 .nav-logo {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #61dafb;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    width: 98%;
-    padding: 0.5px;
+    background: linear-gradient(45deg, #61dafb, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .nav-menu {
@@ -60,12 +59,16 @@ body {
 .nav-menu a {
     color: #f0f0f0;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
 }
 
 .nav-menu a:hover {
     color: #61dafb;
+    background: rgba(97, 218, 251, 0.1);
+    transform: translateY(-2px);
 }
 
 .nav-menu a::after {
@@ -73,32 +76,273 @@ body {
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #61dafb;
-    transition: width 0.3s ease;
+    bottom: 0;
+    left: 50%;
+    background: linear-gradient(45deg, #61dafb, #ff6b6b);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
 .nav-menu a:hover::after {
-    width: 100%;
+    width: 80%;
 }
 
 /* Hero Section */
 .hero {
-    min-height: 115vh; /* উচ্চতা 100vh রাখা ভালো */
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     position: relative;
-    overflow: hidden; /* অ্যানিমেশনের জন্য এটি জরুরি */
-    color: #fff; /* ভেতরের লেখার রঙ সাদা রাখা হলো */
-
-    /* মূল আকর্ষণ: অ্যানিমেটেড গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড */
-    background: linear-gradient(10deg, #0B4C5F 0%, #000000, #000000);
-    background-size: 400% 400%;
-    animation: moveGradient 15s ease-in-out infinite;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #0a0a0a 100%);
 }
+
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.floating-shapes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, rgba(97, 218, 251, 0.1), rgba(255, 107, 107, 0.1));
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 120px;
+    height: 120px;
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
+}
+
+.shape-3 {
+    width: 60px;
+    height: 60px;
+    top: 80%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+.shape-4 {
+    width: 100px;
+    height: 100px;
+    top: 30%;
+    right: 30%;
+    animation-delay: 1s;
+}
+
+.shape-5 {
+    width: 140px;
+    height: 140px;
+    top: 10%;
+    right: 5%;
+    animation-delay: 3s;
+}
+
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, rgba(97, 218, 251, 0.3), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255, 107, 107, 0.3), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(78, 205, 196, 0.3), transparent),
+        radial-gradient(1px 1px at 130px 80px, rgba(97, 218, 251, 0.3), transparent),
+        radial-gradient(2px 2px at 160px 30px, rgba(255, 107, 107, 0.3), transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: particles 20s linear infinite;
+}
+
+
+.hero-content {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1200px;
+    padding: 6rem;
+}
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid transparent;
+    background: linear-gradient(45deg, #61dafb, #ff6b6b, #4ecdc4) border-box;
+    box-shadow:
+        0 0 50px rgba(97, 218, 251, 0.4),
+        0 0 100px rgba(255, 107, 107, 0.2),
+        inset 0 0 50px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    animation: profileGlow 3s ease-in-out infinite alternate;
+}
+
+.profile-glow {
+    display: none;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #61dafb, #ff6b6b, #4ecdc4);
+    z-index: -1;
+    filter: blur(20px);
+    opacity: 0.6;
+    animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+.hero-text {
+    margin-bottom: 3rem;
+}
+
+.hero-title {
+    margin-bottom: 2rem;
+}
+
+.greeting {
+    display: block;
+    font-size: 1.5rem;
+    color: #61dafb;
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 1s ease-out 0.2s both;
+
+}
+
+.name {
+    display: block;
+    font-size: 4rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #61dafb, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.subtitle {
+    display: block;
+    font-size: 2rem;
+    color: #f0f0f0;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.hero-description {
+    font-size: 1rem;
+    max-width: 1000px;
+    margin: 0 auto 3rem;
+    opacity: 0.9;
+    line-height: 1.8;
+    animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out 1s both;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #61dafb, #ff6b6b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease-out 1.2s both;
+}
+
+.btn {
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #61dafb, #ff6b6b);
+    color: white;
+    box-shadow: 0 10px 30px rgba(97, 218, 251, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #61dafb;
+    border: 2px solid #61dafb;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(97, 218, 251, 0.4);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+}
+
+.btn-secondary:hover {
+    background: rgba(97, 218, 251, 0.1);
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+}
+
+
+
 
 .hero::before {
     content: '';
@@ -111,6 +355,25 @@ body {
                 radial-gradient(circle at 70% 30%, rgba(138, 43, 226, 0.1) 0%, transparent 50%);
     z-index: 1;
 }
+
+
+.hero-content-grid {
+    display: flex;
+    flex-wrap: wrap; /* ছোট স্ক্রিনের জন্য */
+    align-items: center;
+    justify-content: center;
+    gap: 2rem; /* লেখা এবং ছবির মধ্যে ফাঁকা জায়গা */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* বাম দিকের টেক্সট সেকশন */
+.hero-text-content {
+   flex: 1 1 500px; /* Flex-basis: 500px, এটি ছোট স্ক্রিনে ভাঙতে সাহায্য করবে */
+    text-align: left; /* লেখাগুলোকে বাম দিক থেকে শুরু করা হলো */
+}
+
 
 .hero-content {
     position: relative;
@@ -134,8 +397,31 @@ body {
     box-shadow: 0 0 50px rgba(97, 218, 251, 0.5);
 }
 
+
+/* শিরোনামের স্টাইল (`h2`) */
+.hero-text-content h2 {
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #2d3748;
+}
+
+
+
+/* শিরোনামের হাইলাইট করা অংশের জন্য */
+.hero-text-content .highlight {
+    color: #00838d; /* স্ক্রিনশটের মতো সবুজ-নীল রঙ */
+    /*text-decoration: underline; */
+    text-decoration-thickness: 4px;
+    text-underline-offset: 8px;
+}
+
+
+
+
 .hero-content h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
     background: linear-gradient(45deg, #61dafb, #8a2be2);
     -webkit-background-clip: text;
@@ -144,18 +430,39 @@ body {
     animation: glow 2s ease-in-out infinite alternate;
 }
 
-.hero-content p {
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    opacity: 0.9;
+/* প্যারাগ্রাফের স্টাইল */
+.hero-text-content p {
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    margin-bottom: 2rem;
+    color: #4a5568;
+    line-height: 1.6;
+    max-width: 600px; /* লেখা যেন খুব বেশি চওড়া না হয় */
 }
 
+
+
+/* বাটনগুলোর স্টাইল (আগের মতোই থাকবে) */
 .hero-buttons {
     display: flex;
     gap: 1rem;
+}
+
+/* ডান দিকের ছবির সেকশন */
+.hero-image-content {
+     flex: 1 1 100px; /* Flex-basis: 400px */
+    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* ছবির স্টাইল */
+.profile-picture {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-radius: 60%; /* আপনার ছবিটি গোলাকার রাখার জন্য */
+    border: 45deg, #61dafb, #8a2be2; /* একটি হালকা বর্ডার */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .btn {
@@ -176,7 +483,7 @@ body {
 
 .btn-secondary {
     background: transparent;
-    color: #61dafb;
+    color: solid black;
     border: 2px solid #61dafb;
 }
 
@@ -225,7 +532,7 @@ body {
 
 /* About Section Specific Styles */
 .about_specific_styles {
-    background-color: #0b0c10; /* একটি গাঢ় ব্যাকগ্রাউন্ড কালার, যা আপনার সাইটের সাথে মিলবে */
+    background-color: 45deg #61dafb, #8a2be2; /* একটি গাঢ় ব্যাকগ্রাউন্ড কালার, যা আপনার সাইটের সাথে মিলবে */
     padding-top: 100px; /* উপরের সেকশন থেকে পর্যাপ্ত দূরত্ব তৈরি করতে */
     padding-bottom: 100px; /* নিচের সেকশন থেকে দূরত্ব তৈরি করতে */
     /* position: relative; <-- এটি .section ক্লাসেই আছে, তাই আবার লেখার প্রয়োজন নেই */
