@@ -371,7 +371,7 @@ body {
 /* বাম দিকের টেক্সট সেকশন */
 .hero-text-content {
    flex: 1 1 500px; /* Flex-basis: 500px, এটি ছোট স্ক্রিনে ভাঙতে সাহায্য করবে */
-    text-align: left; /* লেখাগুলোকে বাম দিক থেকে শুরু করা হলো */
+    text-align: left; 
 }
 
 
@@ -411,7 +411,7 @@ body {
 
 /* শিরোনামের হাইলাইট করা অংশের জন্য */
 .hero-text-content .highlight {
-    color: #00838d; /* স্ক্রিনশটের মতো সবুজ-নীল রঙ */
+    color: #00838d; 
     /*text-decoration: underline; */
     text-decoration-thickness: 4px;
     text-underline-offset: 8px;
@@ -436,12 +436,10 @@ body {
     margin-bottom: 2rem;
     color: #4a5568;
     line-height: 1.6;
-    max-width: 600px; /* লেখা যেন খুব বেশি চওড়া না হয় */
+    max-width: 600px; 
 }
 
 
-
-/* বাটনগুলোর স্টাইল (আগের মতোই থাকবে) */
 .hero-buttons {
     display: flex;
     gap: 1rem;
@@ -460,7 +458,7 @@ body {
     width: 100%;
     max-width: 320px;
     height: auto;
-    border-radius: 60%; /* আপনার ছবিটি গোলাকার রাখার জন্য */
+    border-radius: 60%; 
     border: 45deg, #61dafb, #8a2be2; /* একটি হালকা বর্ডার */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -535,7 +533,6 @@ body {
     background-color: 45deg #61dafb, #8a2be2; /* একটি গাঢ় ব্যাকগ্রাউন্ড কালার, যা আপনার সাইটের সাথে মিলবে */
     padding-top: 100px; /* উপরের সেকশন থেকে পর্যাপ্ত দূরত্ব তৈরি করতে */
     padding-bottom: 100px; /* নিচের সেকশন থেকে দূরত্ব তৈরি করতে */
-    /* position: relative; <-- এটি .section ক্লাসেই আছে, তাই আবার লেখার প্রয়োজন নেই */
 }
 
 
